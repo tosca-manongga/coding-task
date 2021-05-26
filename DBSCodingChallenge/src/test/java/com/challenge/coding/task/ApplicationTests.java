@@ -17,7 +17,6 @@ import com.challenge.coding.github.Application;
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
 public class ApplicationTests {
-
 	@Autowired
 	private MockMvc mvc;
 
@@ -94,5 +93,4 @@ public class ApplicationTests {
 
 		assertEquals("", result);
 	}
-
 }
