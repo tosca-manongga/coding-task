@@ -36,7 +36,8 @@ public class GitHubService {
 			gitHubEntity.setCreationDateTime(LocalDateTime.now());
 
 			try {
-				RequestEntity<Void> requestEntity = RequestEntity.get("https://api.github.com/repos/{owner}/{repo}", owner, repositoryName)
+				RequestEntity<Void> requestEntity = RequestEntity
+						.get("https://api.github.com/repos/{owner}/{repo}", owner, repositoryName)
 						.header("accept", "application/vnd.github.v3+json")
 						.build();
 

@@ -19,15 +19,16 @@ import com.challenge.coding.github.Application;
 public class ApplicationTests {
 
 	@Autowired
-    private MockMvc mvc;
+	private MockMvc mvc;
 
 	@Test
 	public void positiveTest1() throws Exception {
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/repositories/{owner}/{repositoryName}", "tosca-manongga", "coding-task")
-				.contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-		        .andExpect(status().isOk())
-		        .andReturn();
+		MvcResult mvcResult = mvc
+				.perform(MockMvcRequestBuilders
+						.get("/repositories/{owner}/{repositoryName}", "tosca-manongga", "coding-task")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk()).andReturn();
 
 		String result = mvcResult.getResponse().getContentAsString();
 
@@ -36,11 +37,13 @@ public class ApplicationTests {
 
 	@Test
 	public void positiveTest2() throws Exception {
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/repositories/{owner}/{repositoryName}", "iptv-org", "iptv")
-				.contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-		        .andExpect(status().isOk())
-		        .andReturn();
+		MvcResult mvcResult = mvc
+				.perform(MockMvcRequestBuilders
+						.get("/repositories/{owner}/{repositoryName}", "iptv-org", "iptv")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
 
 		String result = mvcResult.getResponse().getContentAsString();
 
@@ -49,11 +52,13 @@ public class ApplicationTests {
 
 	@Test
 	public void positiveTest3() throws Exception {
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/repositories/{owner}/{repositoryName}", "spring-projects", "spring-boot")
-				.contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-		        .andExpect(status().isOk())
-		        .andReturn();
+		MvcResult mvcResult = mvc
+				.perform(MockMvcRequestBuilders
+						.get("/repositories/{owner}/{repositoryName}", "spring-projects", "spring-boot")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
 
 		String result = mvcResult.getResponse().getContentAsString();
 
@@ -62,11 +67,13 @@ public class ApplicationTests {
 
 	@Test
 	public void positiveTest4() throws Exception {
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/repositories/{owner}/{repositoryName}", "elastic", "elasticsearch")
-				.contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-		        .andExpect(status().isOk())
-		        .andReturn();
+		MvcResult mvcResult = mvc
+				.perform(MockMvcRequestBuilders
+						.get("/repositories/{owner}/{repositoryName}", "elastic", "elasticsearch")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
 
 		String result = mvcResult.getResponse().getContentAsString();
 
@@ -75,11 +82,13 @@ public class ApplicationTests {
 
 	@Test
 	public void negativeTest() throws Exception {
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/repositories/{owner}/{repositoryName}", "blah", "blah")
-				.contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-		        .andExpect(status().isNotFound())
-		        .andReturn();
+		MvcResult mvcResult = mvc
+				.perform(MockMvcRequestBuilders
+						.get("/repositories/{owner}/{repositoryName}", "blah", "blah")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNotFound())
+				.andReturn();
 
 		String result = mvcResult.getResponse().getContentAsString();
 

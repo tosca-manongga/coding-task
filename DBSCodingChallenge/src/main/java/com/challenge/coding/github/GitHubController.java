@@ -32,7 +32,7 @@ public class GitHubController {
 
 		if (HttpStatus.OK.value() == gitHubEntity.getStatusCode()) {
 			try {
-				GitHubRepositoryResponse gitHubRepositoryResponse =  objectMapper.readValue(gitHubEntity.getResponse(), GitHubRepositoryResponse.class);
+				GitHubRepositoryResponse gitHubRepositoryResponse = objectMapper.readValue(gitHubEntity.getResponse(), GitHubRepositoryResponse.class);
 
 				GitHubResponse gitHubResponse = new GitHubResponse();
 				gitHubResponse.setFullName(gitHubRepositoryResponse.getFullName());
